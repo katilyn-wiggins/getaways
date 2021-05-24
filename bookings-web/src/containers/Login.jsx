@@ -10,7 +10,6 @@ const User = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(true); 
 
-
   
   const handleSubmit = (e) => {
     e.preventDefault(); 
