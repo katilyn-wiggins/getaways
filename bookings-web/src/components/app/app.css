@@ -29,3 +29,19 @@ ul {
   font-family: 'Work Sans', sans-serif;
   font-weight: bolder;
 }
+
+.pool {
+  height: 50px;
+}
+
+.wifi {
+  height: 40px;
+}
+
+.pets {
+  height: 40px;
+}
+
+.nopets {
+  height: 40px;
+}

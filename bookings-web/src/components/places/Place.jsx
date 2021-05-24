@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from '../app/app.css'; 
-import pool from '../images/pool.png'
+import pool from '../../../public/images/pool.png'; 
+import wifi from '../../../public/images/wifi.png'; 
 import {BrowserRouter as Router, Link } from 'react-router-dom'; 
 
 
@@ -19,7 +20,7 @@ const Place = ({
   wifi,
 }) => {
   return (
-  <Link to={`/${id}`}> 
+  <Link to={`/${name}`} style={{ textDecoration: 'none' }}> 
     <ul className={classes.listitem}>
       <li className={classes.name}>{name}</li>
       <li className={classes.description}>{description}</li>
@@ -28,9 +29,13 @@ const Place = ({
       {/* <li className="loc-image"><img src={image}></img></li> */}
       <li><img src={imageThumbnail} className={classes.thumb}></img></li>
       <li className={classes.max}>Sleeps {maxGuests}</li>
-      <li className={classes.pets}>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
-      {pool ? <li className={classes.pool}><img src={pool} alt="pool"/>Has a Pool!</li> : null}
-      {wifi ? <li><img src={require('../images/wifi.png')}></img></li> : null}
+      <li className={classes.pets}>{petFriendly ? 
+      <img className={classes.pets} src='../../../public/images/pawprint.png' alt="property is pet friendly"/> 
+      : <img className={classes.nopets} src='../../../public/images/no-pets.png' alt="property is not pet friendly"/> 
+
+      }</li>
+      {pool ? <li><img className={classes.pool} src='../../../public/images/pool.png' alt="property has pool"/></li> : null}
+      {wifi ? <li><img className={classes.wifi} src='../../../public/images/wifi.png' alt="property has wifi"></img></li> : null}
     </ul>
     </Link>
   );
