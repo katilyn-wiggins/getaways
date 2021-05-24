@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from '../app/app.css'; 
 
-const UserRegistration = ({ handleSubmit, handleUserNameChange, userName }) => {
+const UserLogin = (handleSubmit) => {
   return (
     <div>
-    <h1>Register</h1>
+    <h1>Login</h1>
     <form className={classes.registrationForm} onSubmit={handleSubmit}>
         <label htmlFor="userName">Username: </label>
-        <input type="text" id="userName" value={userName} onChange={handleUserNameChange}/>
+        <input type="text" id="userName"/>
         <label htmlFor="email">Email: </label>
         <input type="email" id="email"/>
         <label htmlFor="password">Password: </label>
@@ -19,8 +19,8 @@ const UserRegistration = ({ handleSubmit, handleUserNameChange, userName }) => {
   );
 };
 
-UserRegistration.propTypes = {
+UserLogin.propTypes = {
     handleSubmit: PropTypes.func.isRequired
 };
 
-export default UserRegistration;
+export default UserLogin;

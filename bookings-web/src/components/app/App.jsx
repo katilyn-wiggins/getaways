@@ -2,6 +2,7 @@ import React from 'react';
 import Getaways from '../../containers/Getaways';
 import GetawayDetail from '../../containers/GetawayDetail'; 
 import User from '../../containers/User';
+import Login from '../../containers/Login';
 import './app.css'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
@@ -23,6 +24,11 @@ export default function App() {
           exact
           component={User}
           /> 
+        <Route
+          path="/login"
+          exact
+          component={Login}
+        />
         <Route
           path="/:id"
           exact
