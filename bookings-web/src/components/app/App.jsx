@@ -13,6 +13,7 @@ export default function App() {
     <Router>
       <Link to="/">Home</Link>
       <Link to="/user">Register</Link>
+      <Link to="/login">Login</Link>
       <Switch>
         <Route
           path="/"

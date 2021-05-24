@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from '../app/app.css'; 
 
-const UserRegistration = ({ handleSubmit, handleUserNameChange, userName }) => {
+const UserRegistration = ({ handleSubmit, handleUserNameChange, userName, handleEmailChange, email, handlePasswordChange, password }) => {
   return (
     <div>
     <h1>Register</h1>
@@ -10,9 +10,9 @@ const UserRegistration = ({ handleSubmit, handleUserNameChange, userName }) => {
         <label htmlFor="userName">Username: </label>
         <input type="text" id="userName" value={userName} onChange={handleUserNameChange}/>
         <label htmlFor="email">Email: </label>
-        <input type="email" id="email"/>
+        <input type="email" id="email" value={email} onChange={handleEmailChange}/>
         <label htmlFor="password">Password: </label>
-        <input type="password" id="password"/>
+        <input type="password" id="password" value={password} onChange={handlePasswordChange}/>
         <button>Submit</button>
     </form>
     </div>
@@ -20,7 +20,13 @@ const UserRegistration = ({ handleSubmit, handleUserNameChange, userName }) => {
 };
 
 UserRegistration.propTypes = {
-    handleSubmit: PropTypes.func.isRequired
+    handleSubmit: PropTypes.func.isRequired,
+    handleUserNameChange: PropTypes.func.isRequired,
+    handleEmailChange: PropTypes.func.isRequired,
+    handlePasswordChange: PropTypes.func.isRequired,
+    userName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
 };
 
 export default UserRegistration;

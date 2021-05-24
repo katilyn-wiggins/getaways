@@ -5,9 +5,9 @@ import { NewUser } from '../services/usersApi';
 
 const User = () => {
   const [user, setUser] = useState({});
-  const [userName, setUserName] = useState('katie');
-  const [email, setEmail] = useState('katie@k.com');
-  const [password, setPassword] = useState('hi');
+  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(true); 
 
 
@@ -21,15 +21,26 @@ const User = () => {
     })
     // console.log(user); 
     NewUser(user); 
+    setLoading(false); 
   }
 
   const handleUserNameChange = (e) => (setUserName(e.target.value))
-  console.log(user);
+  const handleEmailChange = (e) => (setEmail(e.target.value))
+  const handlePasswordChange = (e) => (setPassword(e.target.value))
+ 
 
-
+  // if (loading) return <h1>Loading...</h1>
   return (
   <div>
-    <UserRegistration handleSubmit={handleSubmit} userName={userName} handleUserNameChange={handleUserNameChange} />
+    <UserRegistration 
+    handleSubmit={handleSubmit} 
+    userName={userName} 
+    handleUserNameChange={handleUserNameChange}
+    email={email} 
+    handleEmailChange={handleEmailChange}
+    password={password} 
+    handlePasswordChange={handlePasswordChange}
+     />
   </div>);
 };
 
