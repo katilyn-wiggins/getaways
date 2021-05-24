@@ -4,9 +4,6 @@ import classes from '../app/app.css';
 import pool from '../../../public/images/pool.png'; 
 import wifi from '../../../public/images/wifi.png'; 
 import {BrowserRouter as Router, Link } from 'react-router-dom'; 
-import PlaceDetail from '../../containers/GetawayDetail';
-
-
 
 const Place = ({
   id,
