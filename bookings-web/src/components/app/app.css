@@ -1,0 +1,31 @@
+body {
+  background: lightblue;
+  font-family: 'Rubik', sans-serif;
+}
+
+.listcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb {
+  height: 200px;
+}
+
+/* font-family: 'Rubik', sans-serif; */
+/* font-family: 'Work Sans', sans-serif; */
+
+ul {
+  list-style: none;
+  border: 2px solid black;
+  width: 400px;
+}
+
+.name {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bolder;
+}

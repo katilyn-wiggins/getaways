@@ -1,5 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classes from '../app/app.css'; 
+import pool from '../images/pool.png'
+import {BrowserRouter as Router, Link } from 'react-router-dom'; 
+
+
 
 const Place = ({
   name,
@@ -14,18 +19,20 @@ const Place = ({
   wifi,
 }) => {
   return (
-    <ul>
-      <li>{name}</li>
-      <li>{description}</li>
-      <li>{location}</li>
-      <li>{pricePerNight}</li>
-      <li>{image}</li>
-      <li>{imageThumbnail}</li>
-      <li>{maxGuests}</li>
-      <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
-      {pool ? <li>Has a Pool!</li> : null}
-      {wifi ? <li>Free Wifi</li> : null}
+  <Link to={`/${id}`}> 
+    <ul className={classes.listitem}>
+      <li className={classes.name}>{name}</li>
+      <li className={classes.description}>{description}</li>
+      {/* <li className={classes.location}>{location}</li> */}
+      <li className={classes.price}>${pricePerNight}</li>
+      {/* <li className="loc-image"><img src={image}></img></li> */}
+      <li><img src={imageThumbnail} className={classes.thumb}></img></li>
+      <li className={classes.max}>Sleeps {maxGuests}</li>
+      <li className={classes.pets}>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
+      {pool ? <li className={classes.pool}><img src={pool} alt="pool"/>Has a Pool!</li> : null}
+      {wifi ? <li><img src={require('../images/wifi.png')}></img></li> : null}
     </ul>
+    </Link>
   );
 };
 
