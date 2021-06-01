@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import UserLogout from '../components/logout/UserLogout'
+import { LogoutUser } from '../services/usersApi'
 
 const Logout = () => {
-  const [user, setUser] = useState({});
-  // const [loading, setLoading] = useState(true); 
+  // const [loading, setLoading] = useState(false); 
 
   
   const handleLogout = (e) => {
     e.preventDefault(); 
-    setUser({})
-    // console.log(user); 
+    LogoutUser(); 
     // setLoading(false); 
   }
  

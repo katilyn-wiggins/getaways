@@ -4,24 +4,28 @@ import UserRegistration from '../components/registration/UserRegistration'
 import { NewUser } from '../services/usersApi'; 
 
 const User = () => {
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(true); 
-
-
   
   const handleSubmit = (e) => {
     e.preventDefault(); 
-    setUser({
+    console.log(userName, email, password);
+    // setUser({
+    //   userName,
+    //   email,
+    //   password
+    // });
+    // console.log(user); 
+    NewUser({
       userName,
       email,
       password
     })
-    // console.log(user); 
-    NewUser(user); 
-    setLoading(false); 
+    .then (setLoading(false)) 
+    .then (alert('new user created'));
   }
 
   const handleUserNameChange = (e) => (setUserName(e.target.value))

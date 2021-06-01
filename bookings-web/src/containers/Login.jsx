@@ -28,7 +28,7 @@ const User = () => {
   const handlePasswordChange = (e) => (setPassword(e.target.value))
  
 
-  // if (loading) return <h1>Loading...</h1>
+  if (loading) return <h1>Loading...</h1>
   return (
   <div>
     <UserLogin 

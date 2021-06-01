@@ -1,8 +1,10 @@
-export const getPlaces = async () => {
-  const response = await fetch(`${process.env.BASE_URL}/places`);
+export const getPlaces = async (limit, page) => {
+  const response = await fetch(
+    `${process.env.BASE_URL}/places?limit=${limit}&page=${page}`
+  );
   if (response.ok) {
-    const result = await response.json();
-    return result.map(
+    const { places } = await response.json();
+    return places.map(
       ({
         price_per_night,
         image_thumbnail,
