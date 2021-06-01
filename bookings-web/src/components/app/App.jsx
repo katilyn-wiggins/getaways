@@ -3,6 +3,7 @@ import Getaways from '../../containers/Getaways';
 import GetawayDetail from '../../containers/GetawayDetail'; 
 import User from '../../containers/User';
 import Login from '../../containers/Login';
+import Logout from '../../containers/Logout';
 import './app.css'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
@@ -14,6 +15,7 @@ export default function App() {
       <Link to="/">Home</Link>
       <Link to="/user">Register</Link>
       <Link to="/login">Login</Link>
+      <Link to="/logout">Logout</Link>
       <Switch>
         <Route
           path="/"
@@ -31,10 +33,16 @@ export default function App() {
           component={Login}
         />
         <Route
+          path="/logout"
+          exact
+          component={Logout}
+          /> 
+        <Route
           path="/:id"
           exact
           component={GetawayDetail}
           /> 
+      
        
       </Switch>
     </Router>

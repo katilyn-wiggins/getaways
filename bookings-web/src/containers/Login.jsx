@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import classes from '../../src/components/app/app.css';
-import UserRegistration from '../components/registration/UserRegistration'
+import UserLogin from '../components/login/userLogin'
 import { LoginUser } from '../services/usersApi'; 
 
 const User = () => {
@@ -31,7 +31,7 @@ const User = () => {
   // if (loading) return <h1>Loading...</h1>
   return (
   <div>
-    <UserRegistration 
+    <UserLogin 
     handleSubmit={handleSubmit} 
     userName={userName} 
     handleUserNameChange={handleUserNameChange}
