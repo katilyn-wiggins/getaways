@@ -24,6 +24,16 @@ export const getPlaces = async (limit, page) => {
   }
 };
 
+export const getTotalPlaces = async () => {
+  const response = await fetch(`${process.env.BASE_URL}/places`);
+  if (response.ok) {
+    const { totalPlaces } = await response.json();
+    return totalPlaces;
+  } else {
+    throw new Error(await response.json());
+  }
+};
+
 export const getPlace = async (id) => {
   const response = await fetch(`${process.env.BASE_URL}/places/${id}`);
   if (response.ok) {

@@ -17,7 +17,7 @@ export default function Pagination({ onClick, currentPage, lastPage }) {
         onClick={onClick}
         value="next"
         name="next"
-        // disabled={currentPage >= lastPage}
+        disabled={currentPage >= lastPage}
         >
           next
         </button>
