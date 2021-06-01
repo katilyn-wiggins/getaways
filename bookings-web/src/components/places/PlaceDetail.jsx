@@ -5,6 +5,7 @@ import pool from '../../../public/images/pool.png';
 import wifi from '../../../public/images/wifi.png'; 
 import {BrowserRouter as Router, Link } from 'react-router-dom'; 
 
+
 const Place = ({
   id,
   name,
@@ -19,14 +20,14 @@ const Place = ({
   wifi,
 }) => {
   return (
-  <Link to={`/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}> 
-    <ul className={classes.listitem}>
+    <ul className={classes.biglistitem}>
       <li className={classes.name}>{name}</li>
-      {/* <li className={classes.description}>{description}</li> */}
-      {/* <li className={classes.location}>{location}</li> */}
-      {/* <li className="loc-image"><img src={image}></img></li> */}
-      <li><img src={imageThumbnail} className={classes.thumb}></img></li>
+      <li className={classes.location}>{location}</li>
+      <li><img src={image} className={classes.image}></img></li>
+      {/* <li><img src={imageThumbnail} className={classes.thumb}></img></li> */}
       <li className={classes.price}>${pricePerNight}</li>
+      <li className={classes.description}>{description}</li>
+
       <li className={classes.max}>Sleeps {maxGuests}</li>
       
       {/* small icons */}
@@ -40,7 +41,6 @@ const Place = ({
       {wifi ? <li><img className={classes.wifi} src='../../../public/images/wifi.png' alt="property has wifi"></img></li> : null}
       </ul>
       </ul>
-    </Link>
   );
 };
 
